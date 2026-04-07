@@ -1,0 +1,656 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260407161905
+Username: DESKTOP-8HCKH1F\Admin
+RunAs User: DESKTOP-8HCKH1F\Admin
+Configuration Name: 
+Machine: DESKTOP-8HCKH1F (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 21492
+PSVersion: 5.1.26100.7920
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.7920
+BuildVersion: 10.0.26100.7920
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is Tarea01.txt
+PS C:\Users\Admin> pwd
+
+Path
+----
+C:\Users\Admin
+
+
+PS C:\Users\Admin> cd /
+PS C:\> pwd
+
+Path
+----
+C:\
+
+
+PS C:\> cd Users
+PS C:\Users> pwd
+
+Path
+----
+C:\Users
+
+
+PS C:\Users> cd ..
+PS C:\> pwd
+
+Path
+----
+C:\
+
+
+PS C:\> cd
+PS C:\> pwd
+
+Path
+----
+C:\
+
+
+PS C:\> cd etc
+cd : Cannot find path 'C:\etc' because it does not exist.
+At line:1 char:1
++ cd etc
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\etc:String) [Set-Location], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+cd : Cannot find path 'C:\etc' because it does not exist.
+At line:1 char:1
++ cd etc
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\etc:String) [Set-Location], It
+   emNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLoca
+   tionCommand
+
+PS C:\> cd /
+PS C:\> whoami
+
+PS C:\> cd C/Users/Admin
+cd : Cannot find path 'C:\C\Users\Admin' because it does not exist.
+At line:1 char:1
++ cd C/Users/Admin
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\C\Users\Admin:String) [Set-Location], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+cd : Cannot find path 'C:\C\Users\Admin' because it does not exist.
+At line:1 char:1
++ cd C/Users/Admin
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\C\Users\Admin:String) [Set-Loc
+   ation], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLoca
+   tionCommand
+
+PS C:\> cd /Users/Admin/
+PS C:\Users\Admin> mkdir
+mkdir : An item with the specified name C:\Users\Admin\    already exists.
+At line:1 char:1
++ mkdir
++ ~~~~~
+    + CategoryInfo          : ResourceExists: (C:\Users\Admin\   :String) [New-Item], IOException
+    + FullyQualifiedErrorId : DirectoryExist,Microsoft.PowerShell.Commands.NewItemCommand
+mkdir : An item with the specified name C:\Users\Admin\    already exists.
+At line:1 char:1
++ mkdir
++ ~~~~~
+    + CategoryInfo          : ResourceExists: (C:\Users\Admin\   :String) [New-I
+   tem], IOException
+    + FullyQualifiedErrorId : DirectoryExist,Microsoft.PowerShell.Commands.NewIt
+   emCommand
+
+PS C:\Users\Admin> mkdir /tmp/tutorial
+
+
+    Directory: C:\tmp
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:34                tutorial
+
+
+PS C:\Users\Admin> cd /tmp/tutorial
+PS C:\tmp\tutorial> mkdir dir1 dir2 dir3
+>> TerminatingError(mkdir): "A positional parameter cannot be found that accepts argument 'dir2'."
+mkdir : A positional parameter cannot be found that accepts argument 'dir2'.
+At line:1 char:1
++ mkdir dir1 dir2 dir3
++ ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [mkdir], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,mkdir
+mkdir : A positional parameter cannot be found that accepts argument 'dir2'.
+At line:1 char:1
++ mkdir dir1 dir2 dir3
++ ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [mkdir], ParameterBindingExce
+   ption
+    + FullyQualifiedErrorId : PositionalParameterNotFound,mkdir
+
+PS C:\tmp\tutorial> mkdir dir1
+
+
+    Directory: C:\tmp\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:36                dir1
+
+
+PS C:\tmp\tutorial> ls
+
+
+    Directory: C:\tmp\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:36                dir1
+
+
+PS C:\tmp\tutorial> mkdir -p dir2/dir3/dir4
+
+
+    Directory: C:\tmp\tutorial\dir2\dir3
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:38                dir4
+
+
+PS C:\tmp\tutorial> ls
+
+
+    Directory: C:\tmp\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:36                dir1
+d-----          7/4/2026     16:38                dir2
+
+
+PS C:\tmp\tutorial> cd dir2
+PS C:\tmp\tutorial\dir2> ls
+
+
+    Directory: C:\tmp\tutorial\dir2
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:38                dir3
+
+
+PS C:\tmp\tutorial\dir2> cd dir3
+PS C:\tmp\tutorial\dir2\dir3> ls
+
+
+    Directory: C:\tmp\tutorial\dir2\dir3
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:38                dir4
+
+
+PS C:\tmp\tutorial\dir2\dir3> cd ../..
+PS C:\tmp\tutorial> mkdir "folder 1"
+
+
+    Directory: C:\tmp\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:41                folder 1
+
+
+PS C:\tmp\tutorial> mkdir 'folder 2'
+
+
+    Directory: C:\tmp\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:41                folder 2
+
+
+PS C:\tmp\tutorial> mkdir folder\ 3
+>> TerminatingError(mkdir): "A positional parameter cannot be found that accepts argument '3'."
+mkdir : A positional parameter cannot be found that accepts argument '3'.
+At line:1 char:1
++ mkdir folder\ 3
++ ~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [mkdir], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,mkdir
+mkdir : A positional parameter cannot be found that accepts argument '3'.
+At line:1 char:1
++ mkdir folder\ 3
++ ~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [mkdir], ParameterBindingExce
+   ption
+    + FullyQualifiedErrorId : PositionalParameterNotFound,mkdir
+
+PS C:\tmp\tutorial> ls
+
+
+    Directory: C:\tmp\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:36                dir1
+d-----          7/4/2026     16:38                dir2
+d-----          7/4/2026     16:41                folder 1
+d-----          7/4/2026     16:41                folder 2
+
+
+PS C:\tmp\tutorial> ls > output.txt
+PS C:\tmp\tutorial> ParameterBinding(Out-File): name="InputObject"; value="dir1"
+>> ParameterBinding(Out-File): name="InputObject"; value="dir2"
+>> ParameterBinding(Out-File): name="InputObject"; value="folder 1"
+>> ParameterBinding(Out-File): name="InputObject"; value="folder 2"
+>> ParameterBinding(Out-File): name="InputObject"; value="output.txt"
+PS C:\tmp\tutorial> cat output.txt
+
+
+    Directory: C:\tmp\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:36                dir1
+d-----          7/4/2026     16:38                dir2
+d-----          7/4/2026     16:41                folder 1
+d-----          7/4/2026     16:41                folder 2
+-a----          7/4/2026     16:43              0 output.txt
+
+
+PS C:\tmp\tutorial> echo "this is a test"
+this is a test
+PS C:\tmp\tutorial> echo "this is a test" > test1.txt
+>> ParameterBinding(Out-File): name="InputObject"; value="this is a test"
+PS C:\tmp\tutorial> ls
+
+
+    Directory: C:\tmp\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:36                dir1
+d-----          7/4/2026     16:38                dir2
+d-----          7/4/2026     16:41                folder 1
+d-----          7/4/2026     16:41                folder 2
+-a----          7/4/2026     16:43           1252 output.txt
+-a----          7/4/2026     16:46             34 test1.txt
+
+
+PS C:\tmp\tutorial> echo "this is a testtt" > test2.txt
+>> ParameterBinding(Out-File): name="InputObject"; value="this is a testtt"
+PS C:\tmp\tutorial> cat test1.txt test2.txt
+>> TerminatingError(Get-Content): "A positional parameter cannot be found that accepts argument 'test2.txt'."
+Get-Content : A positional parameter cannot be found that accepts argument 'test2.txt'.
+At line:1 char:1
++ cat test1.txt test2.txt
++ ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Content], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetContentCommand
+Get-Content : A positional parameter cannot be found that accepts argument
+'test2.txt'.
+At line:1 char:1
++ cat test1.txt test2.txt
++ ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Content], ParameterBindi
+   ngException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.C
+   ommands.GetContentCommand
+
+PS C:\tmp\tutorial> cat test1.txt, test2.txt
+this is a test
+this is a testtt
+PS C:\tmp\tutorial> cat test*
+this is a test
+this is a testtt
+PS C:\tmp\tutorial> cat test* > combined.txt
+>> ParameterBinding(Out-File): name="InputObject"; value="this is a test"
+>> ParameterBinding(Out-File): name="InputObject"; value="this is a testtt"
+PS C:\tmp\tutorial> cat combined.txt
+this is a test
+this is a testtt
+PS C:\tmp\tutorial> cat test* > combined.txt
+>> ParameterBinding(Out-File): name="InputObject"; value="this is a test"
+>> ParameterBinding(Out-File): name="InputObject"; value="this is a testtt"
+PS C:\tmp\tutorial> cat test* >> combined.txt
+>> ParameterBinding(Out-File): name="InputObject"; value="this is a test"
+>> ParameterBinding(Out-File): name="InputObject"; value="this is a testtt"
+PS C:\tmp\tutorial> echo "yuppiieee"
+yuppiieee
+PS C:\tmp\tutorial> echo "yuppiieee" >> combined.txt
+>> ParameterBinding(Out-File): name="InputObject"; value="yuppiieee"
+PS C:\tmp\tutorial> cat combined.txt
+this is a test
+this is a testtt
+this is a test
+this is a testtt
+yuppiieee
+PS C:\tmp\tutorial> mv combined.txt dir1
+PS C:\tmp\tutorial> ls dir1
+
+
+    Directory: C:\tmp\tutorial\dir1
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          7/4/2026     16:50            160 combined.txt
+
+
+PS C:\tmp\tutorial> mv dir1/* .
+PS C:\tmp\tutorial> ls
+
+
+    Directory: C:\tmp\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:51                dir1
+d-----          7/4/2026     16:38                dir2
+d-----          7/4/2026     16:41                folder 1
+d-----          7/4/2026     16:41                folder 2
+-a----          7/4/2026     16:50            160 combined.txt
+-a----          7/4/2026     16:43           1252 output.txt
+-a----          7/4/2026     16:46             34 test1.txt
+-a----          7/4/2026     16:46             38 test2.txt
+
+
+PS C:\tmp\tutorial> mv combined.txt test* dir1 dir2
+>> TerminatingError(Move-Item): "A positional parameter cannot be found that accepts argument 'dir1'."
+Move-Item : A positional parameter cannot be found that accepts argument 'dir1'.
+At line:1 char:1
++ mv combined.txt test* dir1 dir2
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Move-Item], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.MoveItemCommand
+Move-Item : A positional parameter cannot be found that accepts argument 'dir1'.
+At line:1 char:1
++ mv combined.txt test* dir1 dir2
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Move-Item], ParameterBinding
+   Exception
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.C
+   ommands.MoveItemCommand
+
+PS C:\tmp\tutorial> mv combined.txt test* dir1, dir2
+>> TerminatingError(Move-Item): "A positional parameter cannot be found that accepts argument 'System.Object[]'."
+Move-Item : A positional parameter cannot be found that accepts argument 'System.Object[]'.
+At line:1 char:1
++ mv combined.txt test* dir1, dir2
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Move-Item], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.MoveItemCommand
+Move-Item : A positional parameter cannot be found that accepts argument
+'System.Object[]'.
+At line:1 char:1
++ mv combined.txt test* dir1, dir2
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Move-Item], ParameterBinding
+   Exception
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.C
+   ommands.MoveItemCommand
+
+PS C:\tmp\tutorial> mv combined.txt, test*, dir1 dir2
+PS C:\tmp\tutorial> ls
+
+
+    Directory: C:\tmp\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:54                dir2
+d-----          7/4/2026     16:41                folder 1
+d-----          7/4/2026     16:41                folder 2
+-a----          7/4/2026     16:43           1252 output.txt
+
+
+PS C:\tmp\tutorial> ls dir2
+
+
+    Directory: C:\tmp\tutorial\dir2
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:52                dir1
+d-----          7/4/2026     16:38                dir3
+-a----          7/4/2026     16:50            160 combined.txt
+-a----          7/4/2026     16:46             34 test1.txt
+-a----          7/4/2026     16:46             38 test2.txt
+
+
+PS C:\tmp\tutorial> mv dir2/combined.txt, dir3/dir4
+mv : Cannot find path 'C:\tmp\tutorial\dir3\dir4' because it does not exist.
+At line:1 char:1
++ mv dir2/combined.txt, dir3/dir4
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\tmp\tutorial\dir3\dir4:String) [Move-Item], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.MoveItemCommand
+mv : Cannot find path 'C:\tmp\tutorial\dir3\dir4' because it does not exist.
+At line:1 char:1
++ mv dir2/combined.txt, dir3/dir4
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\tmp\tutorial\dir3\dir4:String)
+    [Move-Item], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.MoveIte
+   mCommand
+
+PS C:\tmp\tutorial> mv dir2/combined.txt dir3/dir4
+mv : Cannot find path 'C:\tmp\tutorial\dir2\combined.txt' because it does not exist.
+At line:1 char:1
++ mv dir2/combined.txt dir3/dir4
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\tmp\tutorial\dir2\combined.txt:String) [Move-Item], 
+ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.MoveItemCommand
+mv : Cannot find path 'C:\tmp\tutorial\dir2\combined.txt' because it does not
+exist.
+At line:1 char:1
++ mv dir2/combined.txt dir3/dir4
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\tmp\tutorial\dir2\combined.txt
+   :String) [Move-Item], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.MoveIte
+   mCommand
+
+PS C:\tmp\tutorial> mv dir2/combined.txt 
+mv : Cannot find path 'C:\tmp\tutorial\dir2\combined.txt' because it does not exist.
+At line:1 char:1
++ mv dir2/combined.txt
++ ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\tmp\tutorial\dir2\combined.txt:String) [Move-Item], 
+ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.MoveItemCommand
+mv : Cannot find path 'C:\tmp\tutorial\dir2\combined.txt' because it does not
+exist.
+At line:1 char:1
++ mv dir2/combined.txt
++ ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\tmp\tutorial\dir2\combined.txt
+   :String) [Move-Item], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.MoveIte
+   mCommand
+
+PS C:\tmp\tutorial> mv dir2/combined.txt
+mv : Cannot find path 'C:\tmp\tutorial\dir2\combined.txt' because it does not exist.
+At line:1 char:1
++ mv dir2/combined.txt
++ ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\tmp\tutorial\dir2\combined.txt:String) [Move-Item], 
+ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.MoveItemCommand
+mv : Cannot find path 'C:\tmp\tutorial\dir2\combined.txt' because it does not
+exist.
+At line:1 char:1
++ mv dir2/combined.txt
++ ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\tmp\tutorial\dir2\combined.txt
+   :String) [Move-Item], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.MoveIte
+   mCommand
+
+PS C:\tmp\tutorial> ls dir2
+
+
+    Directory: C:\tmp\tutorial\dir2
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:52                dir1
+d-----          7/4/2026     16:38                dir3
+-a----          7/4/2026     16:46             34 test1.txt
+-a----          7/4/2026     16:46             38 test2.txt
+
+
+PS C:\tmp\tutorial> ls dir2/dir3/dir4
+PS C:\tmp\tutorial> ls
+
+
+    Directory: C:\tmp\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:55                dir2
+d-----          7/4/2026     16:41                folder 1
+d-----          7/4/2026     16:41                folder 2
+-a----          7/4/2026     16:50            160 combined.txt
+-a----          7/4/2026     16:43           1252 output.txt
+
+
+PS C:\tmp\tutorial> mv combined.txt dir2/dir3/dir4
+PS C:\tmp\tutorial> ls dir2/dir3/dir4
+
+
+    Directory: C:\tmp\tutorial\dir2\dir3\dir4
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          7/4/2026     16:50            160 combined.txt
+
+
+PS C:\tmp\tutorial> cp dir2/dir3/dir4/combined.txt
+PS C:\tmp\tutorial> ls dir2/dir3/dir4
+
+
+    Directory: C:\tmp\tutorial\dir2\dir3\dir4
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          7/4/2026     16:50            160 combined.txt
+
+
+PS C:\tmp\tutorial> ls
+
+
+    Directory: C:\tmp\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:55                dir2
+d-----          7/4/2026     16:41                folder 1
+d-----          7/4/2026     16:41                folder 2
+-a----          7/4/2026     16:50            160 combined.txt
+-a----          7/4/2026     16:43           1252 output.txt
+
+
+PS C:\tmp\tutorial> cp combined.txt backupcombined.txt
+PS C:\tmp\tutorial> ls
+
+
+    Directory: C:\tmp\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:55                dir2
+d-----          7/4/2026     16:41                folder 1
+d-----          7/4/2026     16:41                folder 2
+-a----          7/4/2026     16:50            160 backupcombined.txt
+-a----          7/4/2026     16:50            160 combined.txt
+-a----          7/4/2026     16:43           1252 output.txt
+
+
+PS C:\tmp\tutorial> mv backupcombined.txt combinedbackup.txt
+PS C:\tmp\tutorial> ls
+
+
+    Directory: C:\tmp\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:55                dir2
+d-----          7/4/2026     16:41                folder 1
+d-----          7/4/2026     16:41                folder 2
+-a----          7/4/2026     16:50            160 combined.txt
+-a----          7/4/2026     16:50            160 combinedbackup.txt
+-a----          7/4/2026     16:43           1252 output.txt
+
+
+PS C:\tmp\tutorial> mv "folder 1" folder1
+PS C:\tmp\tutorial> ls
+
+
+    Directory: C:\tmp\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:55                dir2
+d-----          7/4/2026     16:41                folder 2
+d-----          7/4/2026     16:41                folder1
+-a----          7/4/2026     16:50            160 combined.txt
+-a----          7/4/2026     16:50            160 combinedbackup.txt
+-a----          7/4/2026     16:43           1252 output.txt
+
+
+PS C:\tmp\tutorial> rm dir2/dir3/dir4/combined.txt
+PS C:\tmp\tutorial> rm folder*
+PS C:\tmp\tutorial> ls
+
+
+    Directory: C:\tmp\tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          7/4/2026     16:55                dir2
+-a----          7/4/2026     16:50            160 combined.txt
+-a----          7/4/2026     16:50            160 combinedbackup.txt
+-a----          7/4/2026     16:43           1252 output.txt
+
+
+PS C:\tmp\tutorial> Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20260407170634
+**********************
